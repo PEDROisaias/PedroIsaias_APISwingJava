@@ -11,10 +11,12 @@ import java.awt.event.ActionEvent;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class CadastroColono {
 
-    // private static final Pattern EMAIL_PATTERN = 
-    //     Pattern.compile("/w+[@](gmail|hotmail|outlook|yahoo|live)[.](com|gov)([.][/w])+?", Pattern.CASE_INSENSITIVE);
+    // Regex para validar o email
+    private static final Pattern EMAIL_PATTERN = 
+        Pattern.compile("^[\\w.-]+@(gmail|hotmail|outlook|yahoo|live)\\.(com|gov)(\\.[a-z]{2,3})?$", Pattern.CASE_INSENSITIVE);
     public static void main(String[] args) {
         // Configuração da Janela
         JFrame frame = new JFrame("SISTEMA DE CADASTRO DE COLONOS!");
@@ -22,12 +24,12 @@ public class CadastroColono {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
 
-        // Labels
+        // Labels 
         JLabel labelName = new JLabel("Nome: ");
         JLabel labelEmail = new JLabel("E-mail: ");
         JLabel labelIdade = new JLabel("Idade: ");
 
-        // Fields of Text
+        // Campos de Textos
         JTextField campoNome = new JTextField(24);
         JTextField campoEmail = new JTextField(24);
         JTextField campoIdade = new JTextField(3);
@@ -43,11 +45,13 @@ public class CadastroColono {
         JRadioButton femininoRadioButton = new JRadioButton("Feminino", false);
         JRadioButton outroGeneroRadioButton = new JRadioButton("Outro", false);
         
+        // Grupo de botão para melhor gerenciamento de botoes(permite a seleção de apenas um botão)
         ButtonGroup escolhaGenero = new ButtonGroup();
         escolhaGenero.add(masculinoRadioButton);
         escolhaGenero.add(femininoRadioButton);
         escolhaGenero.add(outroGeneroRadioButton);
 
+        // Action Button para habilitar o campo de outro genero ao clicar no botao de outro
         outroGeneroRadioButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 campoGenero.setEnabled(outroGeneroRadioButton.isSelected());
@@ -75,11 +79,11 @@ public class CadastroColono {
                 // Validação e traramento dos dados
                 if (nomeColono.isEmpty() || emailColono.isEmpty() || idadeColono.isEmpty() ) {
                     JOptionPane.showMessageDialog(frame, "ATENÇÃO!! \nPreencha todos os campos para concluir o cadastro.");
+                } else if (!verificarEmail(emailColono)) {
+                    JOptionPane.showMessageDialog(frame, "ATENÇÃO!! \nInsira um endereço de email válido.");
                 } else {
                     JOptionPane.showMessageDialog(frame, "COLONO CADASTRADO: \n " + "Nome:  " + nomeColono + "\n E-mail:  " + emailColono + "\n  Idade:  " + idadeColono + "\n  Gênero:  " + generoColono);
                 }
-                
-
             }
         });
 
@@ -110,5 +114,14 @@ public class CadastroColono {
 
         // Tornando a janela visivel
         frame.setVisible(true);
+    }
+
+    // Valida o email usando o regex
+    public static boolean verificarEmail(String email) {
+        if (email == null) {
+            return false;
+        }
+        Matcher matcher = EMAIL_PATTERN.matcher(email);
+        return matcher.matches();
     }
 }

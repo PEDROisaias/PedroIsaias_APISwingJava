@@ -49,4 +49,4 @@ A validação de e-mail é feita por uma regex específica, que verifica a estru
 A lógica de validação de campos vazios e de e-mail está dentro do ActionListener do botão "Cadastrar".
 
 ✒️ Autor
-PEdro Isaías - https://github.com/PEDROisaias
+Pedro Isaías - https://github.com/PEDROisaias

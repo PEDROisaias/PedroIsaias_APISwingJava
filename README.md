@@ -1,52 +1,51 @@
-👨‍🚀 Sistema de Cadastro de Colonos (Usuários)
-Este é um projeto simples de aprendizado em Java Swing que demonstra a criação de uma interface gráfica (GUI) para cadastrar informações de usuários (colonos). O sistema coleta dados como nome, e-mail, idade e gênero, e exibe o resultado em uma janela de diálogo (JOptionPane).
+# Sistema de Cadastro de Colonos
 
-📋 Funcionalidades
-O projeto possui as seguintes funcionalidades:
+## Sobre o Sistema
 
-Formulário de Cadastro: Uma janela com campos para o usuário inserir seus dados.
+Este é um projeto de aprendizagem do Java com o Swing, demonstrando uma interface gráfica (GUI) para cadastrar informações de usuários (colonos). O sistema coleta dados como nome, e-mail, idade e gênero, e exibe estas informações em uma janela (*JOptionPane*).
 
-Validação de E-mail: O sistema utiliza Expressão Regular (Regex) para garantir que o e-mail inserido siga um formato válido e tenha um domínio reconhecido (como @gmail.com, @outlook.com.br, etc.).
+## Funcionalidades
+* **Formulário de Cadastro:** Uma janela com campos para o usuário inserir seus dados.
+* **Validação de E-mail:** O sistema utiliza Expressão Regular (Regex) para garantir que o e-mail inserido siga um formato válido e tenha um domínio reconhecido (como *@gmail.com*, *@outlook.com.br*, etc.).
+* **Seleção de Gênero:** Utiliza *JRadioButtons* para selecionar o gênero (Masculino, Feminino ou Outro).
 
-Seleção de Gênero: Utiliza JRadioButtons para selecionar o gênero (Masculino, Feminino ou Outro).
+* **Campo "Outro" Dinâmico:** O campo de texto para inserir um gênero personalizado só é habilitado quando a opção "Outro" é selecionada.
 
-Campo "Outro" Dinâmico: O campo de texto para inserir um gênero personalizado só é habilitado quando a opção "Outro" é selecionada.
+* **Botão Cadastrar:** Após a validação, exibe os dados do usuário em um *JOptionPane*.
 
-Botão Cadastrar: Após a validação, exibe os dados do usuário em um JOptionPane.
+* **Botão Limpar:** Limpa todos os campos do formulário para um novo cadastro.
 
-Botão Limpar: Limpa todos os campos do formulário para um novo cadastro.
+* **Tratamento de Dados:** Garante que todos os campos obrigatórios estejam preenchidos antes de permitir o cadastro.
 
-Tratamento de Dados: Garante que todos os campos obrigatórios estejam preenchidos antes de permitir o cadastro.
+## Como Executar
 
-🚀 Como Executar
-Para rodar este projeto, você precisa ter o Java Development Kit (JDK) instalado na sua máquina.
+Para rodar este projeto, é necessário ter o **Java Development Kit (JDK)** instalado na sua máquina.
 
-Clone o repositório: (Se estiver em um repositório Git)
-git clone: (https://github.com/PEDROisaias/PedroIsaias_APISwingJava.git)
+**1. Clone o repositório:** (Se estiver em um repositório Git)
+git clone https://github.com/PEDROisaias/PedroIsaias_APISwingJava.git
 
-Compile o código Java: Abra o terminal na pasta onde o arquivo CadastroColono.java está localizado e execute o seguinte comando:
-javac CadastroColono.java
+**2. Compile o código Java:** Abra o terminal na pasta onde o arquivo *CadastroColono.java* está localizado e execute o seguinte comando:
+*javac CadastroColono.java*
 
-Execute o programa:
-java CadastroColono
+**3. Execute o programa:**
+*java CadastroColono*
+Uma janela de formulário será exibida, pronhta para ser usada.
 
-Uma janela de formulário será exibida, pronta para o uso.
+## **Tecnologias Utilizadas**
+* **Java**
+* **Java Swing:** Biblioteca para a construção da interface gráfica.
+* **java.util.regex:** API para trabalhar com expressões regulares.
 
-💻 Tecnologias Utilizadas
-Java
+## **Detalhes da Implementação**
 
-Java Swing: Biblioteca para construção da interface gráfica.
+* A interface foi construída usando o *FlowLayout,* que organiza os componentes em uma linha.
 
-java.util.regex: API para trabalhar com expressões regulares.
+* O *ButtonGroup* é usado para agrupar os *JRadioButtons*, permitindo que apenas um possa ser selecionado por vez.
 
-🛠️ Detalhes da Implementação
-A interface foi construída usando o FlowLayout, que organiza os componentes em uma linha.
+* A validação de e-mail é feita por uma regex específica, que verifica a estrutura do e-mail e restringe os domínios para *gmail*, *hotmail*, *outlook*, *yahoo* e *live*.
 
-O ButtonGroup é usado para agrupar os JRadioButtons, permitindo que apenas um possa ser selecionado por vez.
+* A lógica de validação de campos vazios e de e-mail está dentro do *ActionListener* do botão "Cadastrar".
 
-A validação de e-mail é feita por uma regex específica, que verifica a estrutura do e-mail e restringe os domínios para gmail, hotmail, outlook, yahoo e live.
+## **Autor**
 
-A lógica de validação de campos vazios e de e-mail está dentro do ActionListener do botão "Cadastrar".
-
-✒️ Autor
-Pedro Isaías - https://github.com/PEDROisaias
+* **Pedro Isaías** - [Acesse meu perfil](https://github.com/PEDROisaias)
